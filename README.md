@@ -8,3 +8,14 @@ python manage.py startapp APP_NAME
 
 * 서버시작
 python manage.py runserver
+
+* git branch 만들기
+git checkout -b <new branch name>
+  
+* git branch 전환
+git checkout <<branch name>
+ 
+* 활성화된 branch 확인
+git branch
+  
+https://github.com/me50/JupiterWind.git
