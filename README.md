@@ -25,8 +25,16 @@ git checkout -b <new branch name>
   
 * git branch 전환
 git checkout <<branch name>
+  
+* git branch 삭제 로컬
+git branch -d {브랜치명} 
+  
+* git branch 삭제 리모트
+git push origin --delete  {브랜치명} 
  
 * 활성화된 branch 확인
 git branch
   
 https://github.com/me50/JupiterWind.git
+
+$sudo find / -name .DS_Store -print -delete
