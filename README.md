@@ -9,6 +9,17 @@ python manage.py startapp APP_NAME
 * 서버시작
 python manage.py runserver
 
+*
+git add .
+
+*
+git commit -m "some message"
+
+
+*
+
+git push
+
 * git branch 만들기
 git checkout -b <new branch name>
   
