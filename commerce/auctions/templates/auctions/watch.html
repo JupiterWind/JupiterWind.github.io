@@ -1,0 +1,35 @@
+{% extends "auctions/layout.html" %}
+{% load static %}
+
+{% block body %}
+<h2>Watchlist</h2>
+<table>
+    {% for auction in auctions %}        
+        {% if auction.state == "active" %}         
+            <tr class="list" onclick="self.location='/{{auction.id }}'">
+                <td width="300px">
+                    {% if auction.image_url == '' %}
+                        No Images.
+                    {% else %}
+                        <img src="{% static 'auctions/'%}{{auction.image_url}}">
+                    {% endif %}                       
+                </td>
+                <td>
+                    <h2>{{ auction.title}}</h2>
+                    <b>Price : ${{ auction.current_bid}}</b><br>
+                    {{ auction.description}}<br><br>
+                    {{ auction.created_date}} by {{auction.creator}}</a>
+                </td>
+            </tr>
+            <tr><td>&nbsp;</td></tr>
+        {% endif %}       
+    {% endfor %}
+</table>
+{% if messages %}
+    <ul class="messages">
+{% for message in messages %}
+    <li class="error">{{ message }}</li>
+{% endfor %}
+    </ul>
+{% endif %}
+{% endblock %}

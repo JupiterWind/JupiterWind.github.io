@@ -1,0 +1,107 @@
+{% extends "auctions/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+<h1>Listing : {{ auction.title }}</h1>
+{% if user.is_authenticated %}
+<form action="{% url 'watch' user.id %}" method="POST">
+    {% csrf_token %}
+    <input type="hidden" name="auction_id" value="{{ auction.id }}">
+    {% if watch %}
+        <input type="submit" value="delete watchlist">
+        <input type="hidden" name="mode" value="delete">
+    {% else %}
+        <input type="submit" value="watchlist">
+        <input type="hidden" name="mode" value="add">
+    {% endif %}
+</form>
+{% endif %}
+
+{% if auction.image_url == '' %}
+<div style="width:200px;text-align: center; line-height: 200px; vertical-align: middle;">No Images. </div>
+{% else %}
+<img src="{% static 'auctions/'%}{{auction.image_url}}">
+{% endif %} 
+
+<br>
+{{ auction.description}}<br>
+
+{% if auction.state == "close" %}
+    <h3>ending bid : ${{bid.ending_bid}}</h3>
+{% elif bid.number_of_bid > 0 %}
+    <h3>current bid : ${{ bid.current_bid }}</h3>
+{% else %}
+    <h3>starting bid : ${{ auction.current_bid}}</h3>
+{% endif %}
+    
+<br>
+<h2>Details</h2>
+<ul>
+    <li>Listed by : {{ auction.creator }}</li>
+    <li>Category : {{ auction.get_category_display }}</li>
+</ul>
+
+{{ bid.number_of_bid }} bid(s) so far.
+{% if user.id == bid.bidder_id %}
+Your bid is the current bid.
+{% endif %}
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li class="error">{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% if user.is_authenticated %}
+    {% if auction.state == "active" %}
+        {% if user.id == auction.creator_id %}
+            <form action="{% url 'close' auction.id %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="userId" value="{{ user.id }}">
+                <input type="submit" value="Close Bid">
+            </form>
+        {% else %}
+            {{bid_form.non_field_errors}}
+            <form action="{% url 'bid' auction.id %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="userId" value="{{ user.id }}">
+                {{bid_form}}
+                <input type="submit" value="Place Bid">
+            </form>
+        {% endif %}
+    {% else %}
+        {% if user.id == bid.winner_id %}
+            <h3><b>You are the winner!!</b></h3>
+        {% elif user.id == auction.creator_id %}
+            {% if bid.winner != null %}
+                <h3>The winner is {{ bid.winner }} .</h3>
+            {% else %}
+                <h3>There is no bidder.</h3>
+            {% endif%}            
+        {% else %}
+            <h3>This bid closed.</h3>
+        {% endif %}
+    {% endif %}
+{% endif %}
+
+<h2>Comments</h2>
+{% for comment in comments %}
+    <div>{{ comment.comment }}  by {{ comment.commenter }}</div>
+{% empty %}
+    <div>No Comments.</div>
+{% endfor %}
+
+{% if user.is_authenticated %}
+{{comment_form.non_field_errors}}
+<form action="{% url 'comment' auction.id %}" method="POST">
+    {% csrf_token %}
+    <input type="hidden" name="userId" value="{{ user.id }}">
+    {{ comment_form}}
+    <input type="submit" value="OK">
+</form>
+{% endif %}
+
+{% endblock %}

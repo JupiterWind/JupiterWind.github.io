@@ -1,0 +1,43 @@
+body {
+    padding: 10px;
+}
+
+table {
+    width : 90%;
+    padding:10px;
+}
+
+td, tr {
+    padding:10px;
+}
+
+a:link, a:visited {
+    color : gray;
+}
+
+a:hover {
+    color:black;
+}
+
+img {
+    width: 200px;
+    height:200px;
+}
+
+img:hover {
+    transform: scaleX(-1);
+}
+
+div {
+    vertical-align: top;
+}
+
+.list {
+    border : 1px solid gray;
+    cursor : pointer;
+}
+
+.error{
+    color : red;
+}
+
