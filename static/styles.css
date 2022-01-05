@@ -3,15 +3,13 @@
 	padding:0;
 } 
 
-body{
-	background-color:#000000;
-}
-
-div{
-	background-color:orangered;
+img {
+	border: none;
+	vertical-align: top;
 }
 
 .container {
- 	margin: 0px;
-	padding: 0;
+	margin:0;
+	padding:0;
+ 	align:center;
 }
