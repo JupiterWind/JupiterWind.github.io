@@ -1,12 +1,12 @@
+/* My Web Font Load */
+@import url('https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+
 * {
 	margin:0;
 	padding:0;
+	font-family: 'Ubuntu', 'NanumSquareRound';
 } 
-
-body {
-	width: 100%;
-	height: 100%;
-}
 
 img {
 	border: none;
@@ -14,6 +14,24 @@ img {
 }
 
 .container {
-	margin:0;
-	padding:0;
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
+
+.title{
+	position:relative;
+}
+
+.title .text{
+	position:absolute;
+	top:30px;
+	left:80px;
+	z-index: 1;
+	font-size:30px;
+}
+
+
+
+
