@@ -13,7 +13,6 @@ window.onload = function (){
 function handleBgImage() {
   let randomNumber = Math.floor(Math.random() * 15) + 1;
     document.querySelector('header img').setAttribute('src', 'static/img/bg0' + randomNumber + '.jpg');
-    document.querySelector('header img').style.visibility = "visible";
   }
 
 // 스크롤 애니메이션  
