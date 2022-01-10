@@ -1,21 +1,54 @@
 /* My Web Font Load */
 @import url('https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Coustard&family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Coustard&family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
 /* bootstrap icon */
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");
+
 * {
 	margin:0;
 	padding:0;
 	font-family: 'Ubuntu', 'NanumSquareRound';
-	font-size: 62.5%;
+	font-size: 62.5%;   /* 1rem = 10px 설정 */
 } 
+
+a {
+	text-decoration: none; /* 링크의 밑줄 제거 */
+	color: inherit; /* 링크의 색상 제거 */
+}
+
+/* 무지개 hover */
+a:hover, a:focus { 
+	animation-duration:2s;
+	animation-name:rainbowLink;
+	animation-iteration-count:infinite;
+}
+@keyframes rainbowLink{
+	0% { color : #ff2a2a;}
+	15%{color:#ff7a2a;}
+	30%{color : #ffc52a;}
+	45%{color:#43ff2a;}
+	60%{color:#2a89ff;}
+	75%{color:#202082;}
+	90%{color:#6b2aff;}
+	100%{color:#e82aff;}
+}
 
 img {
 	border: none;
 	vertical-align: top;
 	max-width: 100%;
 	height: auto;
+}
+
+div {
+	font-size:1.5rem;
+}
+
+i {
+	font-size: 1.8rem;
 }
 
 .container {
@@ -25,36 +58,78 @@ img {
 	justify-content: center;
 }
 
-
-.top{
+header{
 	position:relative;
 }
 
-.top .img_profile{
-	max-width: 80px;
+.img_profile{
+	max-width: 9rem;
 	position:absolute;
 	top:90%;
 	left:3%;
 }
 
-.top .text{
+.heading{
 	position:absolute;
 	top:90%;
 	left:15%;
 	z-index: 1;
 	font-size:3rem;
+	color: #e65100;
+	font-family: 'Nanum Myeongjo';
+	font-weight: 400;
+	letter-spacing : -0.2rem;
+ 	transition: 1s;
+	text-shadow: 2px 2px 1px white,2px 2px 1px white;
 }
 
+.heading .big_letter{
+	font-family: 'Nanum Myeongjo';
+	color: #ac1900;
+}
+
+.quotes{
+	font-family: 'Coustard',Impact;
+	font-size: 3rem;
+	color: #ac1900;
+}
+
+.big_text{
+	font-size: 4rem;
+	font-weight: 700;
+}
+
+.title{
+	font-size: 2.5rem;
+	font-weight:bolder;
+	font-family: 'Bungee Shade';
+}
+
+.sub_title{
+	font-size: 2rem;
+	font-weight:bolder;
+}
+  
 .profile {
-	margin-top: 15%;
+	margin-top: 10rem;
+	font-size:3Srem;
 }
 
-.profile .text {
-	font-size:2rem;
+footer a, .contact{
+	font-size: 1.5rem;
 }
 
 .up-on-scroll {
 	transition: transform 0.7s, opacity 1s;
+}
+
+.show-on-scroll {
+	transition: opacity .5s .25s ease-out;
+}
+
+.effect-on-scroll{
+	transition: transform 4s .25s cubic-bezier(0,1,.3,1),filter 10s 2s ease-out;
+  	will-change: transform;
 }
 
 @media all and (max-width: 750px) {
