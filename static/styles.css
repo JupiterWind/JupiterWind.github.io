@@ -111,7 +111,7 @@ header{
 }
   
 .profile {
-	margin-top: 12rem;
+	margin-top: 10rem;
 	font-size:1.8rem;
 }
 
@@ -132,14 +132,14 @@ footer a, .contact{
   	will-change: transform;
 }
 
-@media all and (max-width: 400px) {
+@media screen and (max-width:480px) {
 	html { font-size: 40%; } 
-	.heading{
-		font-size:2rem;
+	.profile {
+		margin-top: 15rem;
 	}
 }
 
-@media all and (min-width: 401px) and (max-width: 750px) {
+@media all and (max-width:768px) {
 	html { font-size: 50%; } 
 }
 
