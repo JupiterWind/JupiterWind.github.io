@@ -132,14 +132,17 @@ footer a, .contact{
   	will-change: transform;
 }
 
-@media screen and (max-width:480px) {
-	html { font-size: 40%; } 
+@media all and (max-width:480px) {
+	html { font-size: 30%; } 
 	.profile {
-		margin-top: 15rem;
+		margin-top: 20rem;
+	}
+	.heading{
+		font-size:2rem;
 	}
 }
 
-@media all and (max-width:768px) {
+@media all and (min-width:480px) and (max-width:768px) {
 	html { font-size: 50%; } 
 }
 
