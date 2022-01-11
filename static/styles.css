@@ -132,11 +132,14 @@ footer a, .contact{
   	will-change: transform;
 }
 
-@media all and (max-width: 300px) {
+@media all and (max-width: 400px) {
 	html { font-size: 40%; } 
+	.heading{
+		font-size:2rem;
+	}
 }
 
-@media all and (min-width: 301px) and (max-width: 750px) {
+@media all and (min-width: 401px) and (max-width: 750px) {
 	html { font-size: 50%; } 
 }
 
