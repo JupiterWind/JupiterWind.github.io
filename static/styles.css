@@ -44,11 +44,6 @@ img {
 	height: auto;
 }
 
-header img {
-	height: 150px;
-	object-fit: cover;
-}
-
 div {
 	font-size:1.5rem;
 }
@@ -66,6 +61,11 @@ i {
 
 header{
 	position:relative;
+}
+
+.title_img {
+	height: 150px;
+	object-fit: cover;
 }
 
 .img_profile{
