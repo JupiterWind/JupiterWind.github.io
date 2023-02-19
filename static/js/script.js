@@ -12,7 +12,7 @@ window.onload = function (){
 
 function handleBgImage() {
   let randomNumber = Math.floor(Math.random() * 15) + 1;
-    document.querySelector('title_img').setAttribute('src', 'static/img/bg0' + randomNumber + '.jpg');
+    document.querySelector('header img').setAttribute('src', 'static/img/bg0' + randomNumber + '.jpg');
   }
 
 // 스크롤 애니메이션  
