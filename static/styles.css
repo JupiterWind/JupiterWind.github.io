@@ -70,8 +70,13 @@ i {
   font-size: 1.8rem;
 }
 
+ul {
+  margin-left: 0;
+  padding-left: 0.5px;
+}
+
 li {
-  list-style: none;
+  list-style-type: none;
 }
 
 .container {
@@ -167,10 +172,7 @@ header {
 }
 
 .bold {
-  font-size: 1.6rem;
   font-weight: bolder;
-  font-family: AppleSDGothicNeo-bold, Malgun Gothic, 맑은 고딕, dotum, 돋움,
-    sans-serif;
 }
 
 .spacing {
@@ -180,6 +182,11 @@ header {
 .date {
   font-size: 1.2rem;
   color: #949494;
+}
+
+.li_inside {
+  list-style-position: inside;
+  text-indent: 20px;
 }
 
 footer a,
