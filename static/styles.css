@@ -163,6 +163,18 @@ header {
   background-color: #fff;
 }
 
+.toy {
+  border-radius: 5px;
+  border: 0.1rem solid black;
+  padding: 15px;
+  margin: 15px 0px 15px 0;
+  font-size: 0.9em;
+  line-height: 20px;
+  border-right: 4px solid black;
+  border-bottom: 4px solid black;
+  background-color: #fff;
+}
+
 .text {
   font-size: 1.5rem;
   line-height: 1.5;
@@ -177,6 +189,10 @@ header {
 
 .bold {
   font-weight: bolder;
+}
+
+.point_color {
+  color: #e65100;
 }
 
 .spacing {
